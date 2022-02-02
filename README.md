@@ -3,7 +3,7 @@
 
 ##Laboratório de Docker
 
-* [1 - Dependencias](https://github.com/ViniFTex/Docker/dependencia)
+* [1 - Dependencias](https://github.com/ViniFTex/Docker/dependencia/README.md)
 * [2 - Introdução](https://github.com/ViniFTex/Docker/introducao)
 * [3 - Aprendendo sobre o Docker na pratica](https://github.com/ViniFTex/Docker/aprendendo-docker)
 * [4 - Aprendendo sobre o docker-compose na pratica](https://github.com/ViniFTex/Docker/docker-compose)
