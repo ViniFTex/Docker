@@ -11,7 +11,7 @@
 
 
 
-## Referencias
+## Referências
 https://livro.descomplicandodocker.com.br/
 
 https://docs.docker.com/
