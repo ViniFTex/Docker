@@ -1,5 +1,5 @@
 # Instalações para o LAB
-Para este tutorial irei utilizar a ferramenta boxes do fedora mas podem utilizar o virtualizador de sua preferencia.
+Para este tutorial irei utilizar a ferramenta boxes do fedora, mas podem utilizar o virtualizador de sua preferência.
 
 ## Download
 
@@ -13,13 +13,13 @@ Pode realizar a instalação tudo de forma padrão até conseguir o acesso ao si
 
 Para este laboratório será utilizado o CentOS por ser um sistema operacional mais utilizado geralmente em servidores.
 
-* Um ponto importante seria deixar a maquina virtual em modo bridge para que consigamos acessar ela da nossa maquina principal via SSH, vai facilitar copiar e colar os passos do tutorial
+* Um ponto importante seria deixar a máquina virtual em modo bridge para que consigamos acessar ela da nossa máquina principal via SSH, vai facilitar copiar e colar os passos do tutorial
 
 ### Configuração do CentOS
 
-Vamos fazer algumas instalações de dependencias que iremos precisar para o funcionamento do laboratório, ja que a versão no link a cima é a versão minima do centos para ficar mais leve e instalarmos apenas o que iremos utilizar. 
+Vamos fazer algumas instalações de dependências que iremos precisar para o funcionamento do laboratório, já que a versão no link acima é a versão mínima do centos para ficar mais leve e instalarmos apenas o que iremos utilizar. 
 
-* Antes de tudo vamos pegar o ip que a maquina pegou para acessarmos este novo servidor via SSH
+* Antes de tudo vamos pegar o ip que a máquina virtual pegou para acessarmos este novo servidor via SSH
 ```yaml
 ip addr
 ```
@@ -60,26 +60,23 @@ Last login: Tue Feb  1 15:44:45 2022
 
 é preciso aceitar para ser confirmar a conexão com o servidor e ser adicionado no know_hosts que essa maquina conhece esse servidor e após informar a senha que foi cadastrada na instalação do sistema operacional
 
-* Instalar dependencias necessárias para a realização do laboratório
+* Vamos atualizar para sempre buscar os pacotes mais atuais e instalar o vim
 
 ```yaml
-yum update -y && yum install wget htop vim -y 
+yum update -y && yum install vim -y 
 ```
-
-* htop - vai mostrar de forma mais "bonitinha" o desempenho do servidor como uso de memória e processador e processos que estão em execução.
 * vim - para editarmos textos via linha de comando
-* wget - caso precise baixar diretamente alguma coisa de algum link
 
 ### Instalação do Docker
 
-Primeiro passo é ir diretamente a documentação do docker, sempre buscar a instalação diretamente na documentação do docker.
+Primeiro passo é ir diretamente à documentação do docker, sempre buscar a instalação diretamente na documentação do docker.
 
 
 * [ Doc Install Docker CentOS ](https://docs.docker.com/engine/install/centos/)
 
-Como estamos utilizando uma versão limpa do CentOS vamos pular diretamente para a parte de configuração das dependencias para o docker (Caso tenha pego um servidor que não tenha conhecimento se já teve uma instalação do docker faça todos os passos da documentação do docker.)
+Como estamos utilizando uma versão limpa do CentOS vamos pular diretamente para a parte de configuração das dependências para o docker (Caso tenha pego um servidor que não tenha conhecimento se já teve uma instalação do docker faça todos os passos da documentação do docker.)
 
-* Instalando dependencias
+* Instalando dependências
 
 ```yaml
 sudo yum install -y yum-utils
@@ -110,7 +107,7 @@ Retorno
 Created symlink from /etc/systemd/system/multi-user.target.wants/docker.service to /usr/lib/systemd/system/docker.service.
 ```
 
-Informa que foi criado o link simbolico para inicializar com o sistema.
+Informa que foi criado o link simbólico para inicializar com o sistema.
 
 Agora vamos testar o funcionamento do docker 
 
@@ -149,6 +146,6 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 ```
-Se chegamos até aqui o Docker já esta instalado e funcionando.
+Se chegamos até aqui o Docker já está instalado e funcionando.
 
-* Lembrando que todos esses passos foram retirados da documentação oficial, sempre importante buscar informação na documentação oficial.
+* Lembrando que todos esses passos foram retirados da documentação oficial, é sempre importante buscar informação na documentação oficial.
