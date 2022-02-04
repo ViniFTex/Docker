@@ -229,27 +229,27 @@ Agora é o momento que trocamos uma ideia sobre os problemas que tiveram, sobre 
 
 Descrição das opções do arquivo docker-compose que utilizamos no tutorial.
 
-* Version - 
-* Services -
-    * web-front -
-        * image -
-        * build -
-            * context -
-            * dockerfile dockerfile -
-        * ports -
-            * portaUtilizada -
-        * volumes:
-            * caminhoUtilizado -
-        * command - 
-        * environment -
-            * variavelUtilizada -
-        * networks -
-            * nomeRedeUtilizada -
-        * links:
-            * nomeServiçosLink -
-    * networks - 
-        * nomeNetwork -
-            * driver -
+* Version - Deve ser informado a versão do compose que deseja utilizar
+* Services - Abaixo dos services são informados todos os containers que deseja criar
+    * web-front - Aqui é o nome que deseja definir para o serviço
+        * image - Imagem que deseja utilizar no container
+        * build - Build é definido quando deseja que o docker compose crie a imagem na hora de sugir
+            * context - context é a pasta onde esta o docker file se utilizar . é no mesmo diretório do docker-compose
+            * dockerfile dockerfile - arquivo dockerfile que deseja buildar
+        * ports - essa é a configuração de portas abaixo podemos informar mais de uma porta
+            * portaUtilizada - aqui é a porta que será utilizada se informar só a porta Ex. 80 ele ficara exposto somente internamente na rede criada para os container se informar porta:porta 8080:80 será a porta externa:interna
+        * volumes: Aqui é chamado a configuração de volumes, aqui também podemos ter mais de um volume montado.
+            * caminhoUtilizado -  Aqui informamos o caminho da montage, é aconselhavel informar o caminho inteiro local e o caminho inteiro dentro do container Ex. /mnt/data:/var/lib/docker.
+        * command - Esta opção utilizamos quando precisamos executar alguma coisa dentro container assim que ele iniciar Ex para debug ["sleep","60000"]
+        * environment - Aqui chamamos as variaveis e podemos ter mais de uma variavel informada
+            * variavelUtilizada - A variavel deve seguir o padrão de chave valor 'environment=prod'
+        * networks - aqui chamamos a configuração do network que foi configurado abaixo na area de network
+            * nomeRedeUtilizada - informamos aqui o nome da rede que foi criada ou que necessita conexão
+        * links - Chama os links de comunicação que precisa que tenha conexão podemos ter mais de um link
+            * nomeServiçosLink - Essa configuração podemos informar o nome de serviço que queremos que esse serviço se comunique
+    * networks -  Nesta configuração chamamos a configuração que vai criar a rede para utilização nessa estrutura
+        * nomeNetwork - Informamos um nome para a rede que será chamada nos networks dentro dos serviços
+            * driver - configuração que selecionamos varias formas de utilizar a rede do computador na documentação mostra todas as formas! Essa que estamos utilizando é a padrão
             * ipam -
                 * driver -
 
